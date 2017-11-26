@@ -2,6 +2,8 @@ import { BrowserModule} from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { TaskService } from './services/task.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -21,9 +23,10 @@ import { LoginComponent } from './components/login/login.component';
         BrowserModule,
         CommonModule,
         AppRoutingModule,
-        FormsModule
+        FormsModule,
+        BrowserAnimationsModule
     ],
-    providers: [],
+    providers: [TaskService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

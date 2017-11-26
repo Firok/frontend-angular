@@ -1,3 +1,9 @@
 <p>
-  about works!
+  about works! <a href="" (click)="sendMeHome()"><strong>Go Home</strong></a>
 </p>
+
+<ul>
+  <li *ngFor="let task of tasks">
+    {{ task }}
+  </li>
+</ul>

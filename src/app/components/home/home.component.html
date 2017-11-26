@@ -6,18 +6,18 @@
     <p>Task List ({{itemCount}})</p>
   </div>
 </div>
-<div class="container color-light">
+<div class="container color-light" [@tasks]="tasks.length">
   <div class="col">
     <p class="sm">Use this form below to add a new task</p>
 
-    <form action="">
-      <input type="text" class="txt" placeholder="Task">
-      <input type="submit" class="btn" value="{{btnText}}">
+    <form>
+      <input type="text" class="txt" name="task" placeholder="Task" [(ngModel)]="taskText">
+      <input type="submit" class="btn" [value]="btnText" (click)="addTask()">
     </form>
   </div>
   <div class="col">
-    <p class="task-container">
-      My first task
+    <p class="task-container" *ngFor="let task of tasks, let i = index" (click)="removeTask(i)">
+      {{ task }}
     </p>
   </div>
 </div>
